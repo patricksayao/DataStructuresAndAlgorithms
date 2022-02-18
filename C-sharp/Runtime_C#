@@ -10,13 +10,19 @@ public class Example
         Stopwatch stopwatch = new Stopwatch();
  
         stopwatch.Start();
-        Thread.Sleep(5000);
+        
+        // put the code you want to measure here between start and stop------------
+        Thread.Sleep(5000); // sample code to measure
+        
+        
+        
+        //--------------------------------------------------------------------------
+        
         stopwatch.Stop();
  
         Console.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
  
         TimeSpan ts = stopwatch.Elapsed;
- 
         Console.WriteLine("Elapsed Time is {0:00}:{1:00}:{2:00}.{3}",
                         ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
     }
