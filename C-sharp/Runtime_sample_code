@@ -1,0 +1,50 @@
+using System;
+using System.Diagnostics;
+using System.Threading;
+
+// Feb 18 2022
+// description - program to practice runtimes
+
+
+namespace BigO_workspace
+{
+    class MainClass
+    {
+
+        public static void FindNemo(string[] arr)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == "nemo")
+                {
+                    //stopwatch.Stop();
+                    //TimeSpan ts = stopwatch.Elapsed;
+                    Console.WriteLine("nemo has been found.");
+                    //Console.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
+                    //Console.WriteLine("Elapsed RunTime in TimeStamp is {0:00}:{1:00}:{2:00}.{3}",
+                    //        ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+                }
+            }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+            Console.WriteLine("Elapsed Time is {0} ms", stopwatch.ElapsedMilliseconds);
+            Console.WriteLine("Elapsed RunTime in TimeStamp is {0:00}:{1:00}:{2:00}.{3}",
+                    ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+        }
+
+        public static void Main(string[] args)
+        {
+            string[] arr = { "bruce", "marlin", "hank", "darla", "squirt", "bloat", "dory", "nemo", "nigel" };
+
+            string[] arr2 = new string[10000]; // creates a string sized array of 1000 elements
+            for (int i = 0; i < 1000; i++) // adds the string "nemo" to the array each loop
+            {
+                arr2[i] = "nemo";
+            }
+
+            FindNemo(arr2);
+        }
+    }
+}
